@@ -43,7 +43,10 @@ const userController = {
     createUser({ body }, res) {
         User.create(body)
             .then(dbUserData => res.json(dbUserData))
-            .catch(err => res.status(400).json(err));
+            .catch(err => {
+                console.log(err);
+                res.status(400).json(err)
+            });
     },
 
     //update user by id
@@ -68,10 +71,8 @@ const userController = {
             //         res.status(404).json({ message: 'No user found with this id!' });
             //         return;
             //     }
-            //     return Thought.findOneAndDelete(
-            //         { _id: params.id },
-            //         { $pull: { thoughts: } },
-
+            //     return Thought.deleteMany(
+            //         { username: { $gte: body.username } },
             //     )
             // })
             .then(dbUserData => {
