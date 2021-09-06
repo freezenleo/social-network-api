@@ -24,12 +24,12 @@ router
 
 //set up add reaction /api/thoughts/:thoughtId/reactions
 router
-    .route('/:thoughtId/reaction')
+    .route('/:thoughtId/reactions')
     .post(addReaction)
 
 //set up remove reaction
 router
-    .route('/:thoughtId/reaction/:reactionId')
+    .route('/:thoughtId/reactions/:reactionId')
     .delete(removeReaction)
 
 module.exports = router;
