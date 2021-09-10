@@ -91,11 +91,13 @@ const userController = {
     //add friend to list
     addFriend({ params, body }, res) {
         User.findOneAndUpdate(
+
             { _id: params.userId },
-            { $push: { friends: params.friendId } },
-            { new: true }
+            { $addToSet: { friends: params.friendId } },
+            { new: true, upsert: true },
         )
             .then(dbUserData => {
+                console.log('dbUserData', dbUserData);
                 if (!dbUserData) {
                     res.status(404).json({ message: 'No user data found with this id!' });
                     return;
