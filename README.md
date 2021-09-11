@@ -119,6 +119,6 @@ const ReactionSchema = new Schema({
 Express.js, Mongoose, MongoDB, Insomnia
 
 ## Walkthrough Video and Repo URL
-YouTube URL: https://youtu.be/IImagpFD-ho
+YouTube URL: https://youtu.be/lPsjNmsiKLA
 
 Repo URL: https://github.com/freezenleo/social-network-api
